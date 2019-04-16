@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Meme Generator</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="meme.css" />
+</head>
+<body>
+	<!-- header -->
+	<header>
+		<h1>Meme Generator</h1>
+	</header>
+	<!-- main -->
+	<main>
+		<div class="container">
+			<div class="row">
+				<div class="xs-10 sm-768 md-order-1 md-4 md-max-400">
+					<!-- upload image -->
+					<div>
+						<fieldset>
+							<legend>upload image</legend>
+							<div>
+								<input type="file" id="file" accept="image/*" />
+								<p id="file-info"></p>
+							</div>
+						</fieldset>
+					</div>
+					<!-- top line text and bottom line text -->
+					<div>
+						<fieldset>
+							<legend>text</legend>
+							<div>
+								<p>
+									<label for="top-text">top-text : </label>
+									<input type="text" id="top-text" placeholder="top text" />
+								</p>
+							</div>
+							<div>
+								<p>
+									<label for="bottom-text">bottom-text : </label>
+									<input type="text" id="bottom-text" placeholder="bottom text" />
+								</p>
+							</div>
+						</fieldset>
+					</div>
+					<!-- text properties -->
+					<div>
+						<fieldset>
+							<legend>text properties</legend>
+								<div>
+									<p>
+										<label for="font-family">font-family : </label>
+										<input type="text" id="font-family" placeholder="font family" />
+									</p>
+								</div>
+								<div>
+									<p>
+										<label for="font-size">font-size : </label>
+										<input type="number" id="font-size" placeholder="font size in px" min="16" />
+									</p>
+								</div>
+								<div>
+									<p>
+										<label for="fill-style">fill-style : </label>
+										<input type="text" id="fill-style" placeholder="fill color" />
+									</p>
+								</div>
+								<div>
+									<p>
+										<label for="stroke-width">stroke-width : </label>
+										<input type="number" id="stroke-width" placeholder="stroke width" min="1" />
+									</p>
+								</div>
+								<div>
+									<p>
+										<label for="stroke-style">stroke-style : </label>
+										<input type="text" id="stroke-style" placeholder="stroke color" />
+									</p>
+								</div>
+						</fieldset>
+						<!-- edit button -->
+						<div>
+							<input type="submit" id="edit-bt" value="edit" />
+						</div>
+					</div>
+				</div>
+				<div class="xs-10 md-order-0 md-6 xs-margin-top">
+					<div class="canvas-container">
+						<canvas id="can" width="0" height="0" title="preview and download"></canvas>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+	<!-- footer -->
+	<footer>
+		<div class="container footer-styled">
+			<p>&copy; Developed by <span class="mae">MAE</span></p>
+		</div>
+	</footer>
+	<!-- modal -->
+	<div class="modal" id="canvas-modal">
+		<div class="modal-container xs-margin-top-80">
+			<div class="modal-content">
+				<div class="modal-body" id="preview"></div>
+				<div class="modal-footer">
+					<a href="#" download="meme" id="download-btn">download</a>
+					<button type="button" id="close-btn">close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- warning alert -->
+	<div class="alert warning xs-9 sm-7 md-4" id="warning">
+		<p>
+			you didn't upload image
+			<a href="#" class="close-sign" id="close-warning" title="close" tabindex="1">&times;</a>
+		</p>
+	</div>
+	<!-- danger alert -->
+	<div class="alert danger xs-9 sm-7 md-4" id="danger">
+		<p>
+			only images are allowed
+			<a href="#" class="close-sign" id="close-danger" title="close" tabindex="1">&times;</a>
+		</p>
+	</div>
+	<!-- script -->
+	<script type="text/javascript" src="meme.js"></script>
+</body>
+</html>
